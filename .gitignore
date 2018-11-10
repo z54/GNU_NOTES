@@ -1,0 +1,17 @@
+# latex
+
+*.aux
+*.log
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
+test.*
+SUMMARY.md
+
+# directory
+
+tex
+_book
+log

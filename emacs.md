@@ -16,6 +16,10 @@ hotkey | function
 `C-x C-c` | exit
 `C-g` | cancel 
 `C-x u` | undo
+
+hotkey | function
+-|-
+
 `C-s` | search before
 `C-r` | search after
 

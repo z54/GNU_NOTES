@@ -1,4 +1,4 @@
-# 6.1.3 fatal
+# fatal
 
 ## 无法启动，进入救援rescue模式
 
