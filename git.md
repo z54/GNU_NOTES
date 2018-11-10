@@ -37,7 +37,8 @@ git push -u origin master
 ### add
 | /                | /                            |
 | ---------------- | ---------------------------- |
-|`git add [file1] [file2] ...`| 添加指定文件到暂存区 |
+|`git add [file1] [file2] ...` | 添加指定文件到暂存区
+
 | `git add [dir]`| 添加指定目录到暂存区，包括子目录 |
 | `git add .`| 添加当前目录的所有文件到暂存区 |
 
@@ -49,7 +50,9 @@ git push -u origin master
 | `git rm --cached [file]`| 停止追踪指定文件，但该文件会保留在工作区  |
 | `git add [dir]`| 添加指定目录到暂存区，包括子目录  |
 
-### multi remote
+### remote
+
+`git remote add origin git@108.61.206.237:/home/git/Notes.git`
 
 #### 方法1: 使用命令修改
 

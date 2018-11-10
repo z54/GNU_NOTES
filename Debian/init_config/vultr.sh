@@ -3,6 +3,8 @@
 # NOTE: This is an example that sets up SSH authorization. To use it, you'd need to replace "ssh-rsa AA... youremail@example.com" with your SSH public.
 # You can replace this entire script with anything you'd like, there is no need to keep it
 
+# 108.61.206.237
+
 echo 'deb http://mirrors.ustc.edu.cn/debian stable main contrib non-free' > /etc/apt/sources.list
 
 apt update
@@ -45,4 +47,4 @@ chown -R git:git /home/git/Notes.git
 
 # local user
 
-git clone git@server:/home/git/Note.git
+git clone git@server:/home/git/Notes.git

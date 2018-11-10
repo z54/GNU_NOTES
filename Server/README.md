@@ -40,5 +40,3 @@ apt-get install git
 adduser git
 gituserpwd
 ```
-
-##
