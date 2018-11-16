@@ -1,5 +1,18 @@
 # Configuration
 
+## 目录颜色与文件颜色区分
+
+[Mac终端ls命令区分文件夹和文件的颜色 - 简书](https://www.jianshu.com/p/488869d76447)
+```
+1.vim ~/.bash_profile
+2.增加（先按i，然后粘贴）
+    #set color
+    export CLICOLOR=1
+    export LSCOLORS=gxfxaxdxcxegedabagacad
+    3.保存（先按esc，然后输入:wq）
+4.source ~/.bash_profile
+```
+
 ## new User
 
 `useradd testuser`  创建用户testuser
