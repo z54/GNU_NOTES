@@ -72,35 +72,38 @@ origin  http://github.com/user/repo.git (push)
 
 > fetch 拉取地址，push 推送地址
 
-#### 方法1: 使用命令修改
+#### 同时同步多个远程仓库
 
-[git 本地仓库同时推送到多个远程仓库](https://blog.csdn.net/fox9916/article/details/79386169)
+- 方法1: 使用命令修改
 
-- 查询`git remote -v`
-- 增加
-	- 增加第一个地址`git remote add origin <url1>`
-	- 增加第二个地址`git remote set-url --add origin <url2>`
-- 删除`git remote rm <主机名>`
-	> 删除指定主机名下的所有远程仓库地址
+	[git 本地仓库同时推送到多个远程仓库](https://blog.csdn.net/fox9916/article/details/79386169)
 
-```bash
-$ git remote add origin http://github.com/user1/repo.git
-$ git remote set-url --add origin git@1.1.1.1:/home/git/repo.git
-$ git remote -v
+	- 查询`git remote -v`
+	- 增加
+		- 增加第一个地址`git remote add origin <url1>`
+		- 增加第二个地址`git remote set-url --add origin <url2>`
+	- 删除`git remote rm <主机名>`
+		> 删除指定主机名下的所有远程仓库地址
 
-origin  http://github.com/user1/repo.git (fetch)
-origin  http://github.com/user1/repo.git (push)
-origin  git@1.1.1.1:/home/git/repo.git (push)
-```
+	```bash
+	$ git remote add origin http://github.com/user1/repo.git
+	$ git remote set-url --add origin git@1.1.1.1:/home/git/repo.git
+	$ git remote -v
 
-#### 方法2: 使用配置修改
+	origin  http://github.com/user1/repo.git (fetch)
+	origin  http://github.com/user1/repo.git (push)
+	origin  git@1.1.1.1:/home/git/repo.git (push)
+	```
 
-```
-[remote "origin"]
-	url = http://github.com/user1/repo.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
-	url = git@1.1.1.1:/home/git/repo.git
-```
+- 方法2: 使用配置修改
+
+	～/.gitconfig
+	```
+	[remote "origin"]
+		url = http://github.com/user1/repo.git
+		fetch = +refs/heads/*:refs/remotes/origin/*
+		url = git@1.1.1.1:/home/git/repo.git
+	```
 
 ### 强制覆盖云
 
