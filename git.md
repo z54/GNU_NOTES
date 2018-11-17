@@ -2,18 +2,27 @@
 
 ## initial
 
+本地新建repositories目录，进入并执行下方代码进行初始化
+
 ```bash
+# local
 echo "# README" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
-git remote add origin https://github.com/z54/Operating-system-exploration.git
+# 远程服务器链接地址按实际情况修改
+git remote add origin https://github.com/username/repo.git
 git push -u origin master
 ```
 
 ### config
 
+[Git - 配置 Git](https://git-scm.com/book/zh/v1/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-%E9%85%8D%E7%BD%AE-Git)
+
+～/.gitconfig
+
 ```bash
+# local
 [user]
 	email = xxx@xxx.com
 	name = xxx
@@ -27,24 +36,27 @@ git push -u origin master
 	helper=store
 ```
 
+`git config --global credential.helper wincred`
+
+`git config --global user.name “yourname`
+
+`git config --global user.email "github@xx.com`
+
 ## usage
 
-| /                | /                            |
+| /                | 版本撤销                         |
 | ---------------- | ---------------------------- |
 | `git checkout -- readme.txt` | 取消某文件的修改  |
-| `git reset --hard HEAD~1  `  | 回滚到上一版本   |
+| `git reset --hard HEAD~1  `  | 回滚到上一版本,`git log查看历史版本记录`   |
 | `git rm --cached test.txt` | 取消指定文件远程跟踪 | 
-### add
-| /                | /                            |
-| ---------------- | ---------------------------- |
-|`git add [file1] [file2] ...` | 添加指定文件到暂存区
 
+| /                | 添加                            |
+| ---------------- | ---------------------------- |
+|`git add [file1] [file2] ...` | 添加指定文件到暂存 |
 | `git add [dir]`| 添加指定目录到暂存区，包括子目录 |
 | `git add .`| 添加当前目录的所有文件到暂存区 |
 
-### rm
-
-| /                | /                            |
+| /                | 删除                            |
 | ---------------- | ---------------------------- |
 | `git rm [file1] [file2] ...`| 删除工作区文件，并且将这次删除放入暂存区 |
 | `git rm --cached [file]`| 停止追踪指定文件，但该文件会保留在工作区  |
@@ -52,25 +64,43 @@ git push -u origin master
 
 ### remote
 
-`git remote add origin git@108.61.206.237:/home/git/Notes.git`
+`git remote add origin http://github.com/user//repo.git`
+
+```
+origin  http://github.com/user/repo.git (fetch)
+origin  http://github.com/user/repo.git (push)
+```
+
+> fetch 拉取地址，push 推送地址
 
 #### 方法1: 使用命令修改
 
 [git 本地仓库同时推送到多个远程仓库](https://blog.csdn.net/fox9916/article/details/79386169)
 
+- 查询`git remote -v`
 - 增加
 	- 增加第一个地址`git remote add origin <url1>`
 	- 增加第二个地址`git remote set-url --add origin <url2>`
 - 删除`git remote rm <主机名>`
-- 查询`git remote -v`
+	> 删除指定主机名下的所有远程仓库地址
+
+```bash
+$ git remote add origin http://github.com/user1/repo.git
+$ git remote set-url --add origin git@1.1.1.1:/home/git/repo.git
+$ git remote -v
+
+origin  http://github.com/user1/repo.git (fetch)
+origin  http://github.com/user1/repo.git (push)
+origin  git@1.1.1.1:/home/git/repo.git (push)
+```
 
 #### 方法2: 使用配置修改
 
 ```
 [remote "origin"]
-	url = https://github.com/z54/Notes.git
+	url = http://github.com/user1/repo.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
-	url = http://cs3.swfu.edu.cn/~20141156047/Notes.git
+	url = git@1.1.1.1:/home/git/repo.git
 ```
 
 ### 强制覆盖云
@@ -87,8 +117,7 @@ git pull
 
 ### ignore 忽略文件（指定文件/文件夹 不同步）
 
-添加.gitignore 文件
-内容如
+添加.gitignore 文件，内容如
 
 ```
 # 文件（*为通配符）
@@ -108,6 +137,8 @@ music
 ## server
 
 - 本地
+
+生成ssh key并将公钥内容追加到服务器authorized_keys
 
 ```bash
 ssh-keygen –t rsa
