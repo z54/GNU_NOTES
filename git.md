@@ -185,3 +185,17 @@ cat /home/git/id_rsa.pub>>/home/git/.ssh/authorized_keys
 $ git remote rm origin
 $ git remote add origin https://github.com/z54/Operating-system-exploration.git
 ```
+
+- There is no tracking information for the current branch
+```
+There is no tracking information for the current branch.
+    Please specify which branch you want to merge with.
+    See git-pull(1) for details
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream develop origin/<branch>
+```
+`git pull origin master`
