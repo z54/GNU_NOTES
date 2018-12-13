@@ -1,18 +1,75 @@
 # README
 
+1. ss server
+2. add the user named "git"
+3. config the git remote
+4. ssh public key
+5. aliyun change the domain
+
 ## shadowsocks
 
 ```bash
+
+echo 'deb http://mirrors.ustc.edu.cn/debian stable main contrib non-free' > /etc/apt/sources.list
+
 apt update
 apt dist-upgrade
 
 apt install python-pip
 pip install shdowsocks
 
-echo sshd: ALL >> /etc/hosts.allow
-service sshd restart
+wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev-debian.sh
+chmod +x shadowsocks-libev-debian.sh
+./shadowsocks-libev-debian.sh 2>&1 | tee shadowsocks-libev-debian.log
+```
+
+## git
+
+[搭建Git服务器 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137583770360579bc4b458f044ce7afed3df579123eca000)
+
+```bash
+su
+apt-get install git
+adduser git
+```
 
 ```
+root@vultr:~# adduser git
+Adding user `git' ...
+Adding new group `git' (1000) ...
+Adding new user `git' (1000) with group `git' ...
+Creating home directory `/home/git' ...
+Copying files from `/etc/skel' ...
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for git
+Enter the new value, or press ENTER for the default
+        Full Name []: 
+        Room Number []: 
+        Work Phone []: 
+        Home Phone []: 
+        Other []: 
+Is the information correct? [Y/n] 
+root@vultr:~# ls /home
+git
+root@vultr:~# ]
+```
+
+## git remote
+
+```
+cd /home/git
+git init --bare sample.git
+git init --bare IMC.git
+git init --bare Notes.git
+git init --bare GNU.git
+```
+
+## others
+
+echo sshd: ALL >> /etc/hosts.allow
+service sshd restart
 
 echo -e {"\n" \
     "server":"0.0.0.0","\n" \
@@ -24,19 +81,6 @@ echo -e {"\n" \
     "fast_open":false"\n"\
 } > /etc/shadowsocks/config.json 
 
-```bash
-ssserver -h # 检查ssserver命令状态
-```
+`ps aux | grep`
 
-## ssh
-
-## git
-
-[搭建Git服务器 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137583770360579bc4b458f044ce7afed3df579123eca000)
-
-```bash
-su
-apt-get install git
-adduser git
-gituserpwd
-```
+/usr/local/bin/ss-server -v -c /etc/shadowsocks-libev/config.json -f /var/run/shadowsocks-libev.pid
