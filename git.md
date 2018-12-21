@@ -95,6 +95,13 @@ origin  http://github.com/user/repo.git (push)
 	origin  git@1.1.1.1:/home/git/repo.git (push)
 	```
 
+	```
+	git remote add origin git@108.61.206.237:/home/git/IMC.git
+	git remote add origin git@45.76.172.139:/home/git/IMC.git
+	git remote add origin git@xvanyuan.com:/home/git/IMC.git
+	git remote set-url --add origin git@108.61.206.237:/home/git/IMC.git
+	```
+
 - 方法2: 使用配置修改
 
 	～/.gitconfig
