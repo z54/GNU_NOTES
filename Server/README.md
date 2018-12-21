@@ -6,6 +6,13 @@
 4. ssh public key
 5. aliyun change the domain
 
+# ip history
+
+45.32.84.105 no
+108.61.206.237 no
+45.76.172.139 ok
+207.246.127.63
+
 ## shadowsocks
 
 ```bash
@@ -60,10 +67,10 @@ root@vultr:~# ]
 
 ```
 cd /home/git
-git init --bare sample.git
-git init --bare IMC.git
 git init --bare Notes.git
 git init --bare GNU.git
+git init --bare IMC.git
+git init --bare tsinsen.git
 ```
 
 ## others
