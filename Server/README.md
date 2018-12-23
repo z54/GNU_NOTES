@@ -7,6 +7,13 @@
 5. aliyun change the domain
 6. nginx
 
+# ip history
+
+45.32.84.105 no
+108.61.206.237 no
+45.76.172.139 ok
+207.246.127.63
+
 ## shadowsocks
 
 ```bash
@@ -62,10 +69,9 @@ root@vultr:~# ]
 ```
 # server
 cd /home/git
-git init --bare sample.git
-git init --bare IMC.git
 git init --bare Notes.git
 git init --bare GNU.git
+<<<<<<< HEAD
 
 chown -R git:git Notes.git
 chown -R git:git IMC.git
@@ -75,6 +81,10 @@ chown -R git:git GNU.git
 ```local
 git fetch
 git ps
+=======
+git init --bare IMC.git
+git init --bare tsinsen.git
+>>>>>>> fa4a96ac7448b6ee5de8bda88c8d2f4b5a0465d8
 ```
 
 ## nginx

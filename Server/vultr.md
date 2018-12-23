@@ -18,7 +18,7 @@ echo ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDWhpsKJaZzmRaVkaZnf6nr+L+vV5IpMwOYKgY
  > /root/.ssh/authorized_keys
 chmod 700 /root/.ssh/authorized_keys
 
-apt install python-pip
+apt install python-pip -y
 pip install shadowsocks
 
 wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev-debian.sh

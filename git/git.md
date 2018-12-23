@@ -95,6 +95,13 @@ origin  http://github.com/user/repo.git (push)
 	origin  git@1.1.1.1:/home/git/repo.git (push)
 	```
 
+	```
+	git remote add origin git@108.61.206.237:/home/git/IMC.git
+	git remote add origin git@45.76.172.139:/home/git/IMC.git
+	git remote add origin git@xvanyuan.com:/home/git/IMC.git
+	git remote set-url --add origin git@108.61.206.237:/home/git/IMC.git
+	```
+
 - 方法2: 使用配置修改
 
 	～/.gitconfig
@@ -138,9 +145,9 @@ music
 
 ## server
 
-- 本地
+- 本地公钥上传到服务器
 
-生成ssh key并将公钥内容追加到服务器authorized_keys
+本地生成ssh key并将公钥内容追加到服务器authorized_keys
 
 ```bash
 ssh-keygen –t rsa
@@ -148,7 +155,7 @@ scp /home/git/.ssh/id_rsa.pub gitServer:/home/git
 cat /home/git/id_rsa.pub>>/home/git/.ssh/authorized_keys   
 ```
 
-## commit
+## commit message
 
 - message formation
 
@@ -179,23 +186,27 @@ cat /home/git/id_rsa.pub>>/home/git/.ssh/authorized_keys
 
 ## fatal
 
-- fatal: remote origin already exists.
+1. remote origin already exists.
 
-```
-$ git remote rm origin
-$ git remote add origin https://github.com/z54/Operating-system-exploration.git
-```
+	```
+	$ git remote rm origin
+	$ git remote add origin https://github.com/z54/Operating-system-exploration.git
+	```
 
-- There is no tracking information for the current branch
-```
-There is no tracking information for the current branch.
-    Please specify which branch you want to merge with.
-    See git-pull(1) for details
+2. There is no tracking information for the current branch
+	- Q
 
-    git pull <remote> <branch>
+		```
+		There is no tracking information for the current branch.
+			Please specify which branch you want to merge with.
+			See git-pull(1) for details
 
-If you wish to set tracking information for this branch you can do so with:
+			git pull <remote> <branch>
 
-    git branch --set-upstream develop origin/<branch>
-```
-`git pull origin master`
+		If you wish to set tracking information for this branch you can do so with:
+
+			git branch --set-upstream develop origin/<branch>
+		```
+	- A
+
+		`git pull origin master`
