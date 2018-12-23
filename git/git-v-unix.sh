@@ -1,15 +1,15 @@
-cd ~/Git/GNU
+cd ~/git/GNU
 git remote -v >> ~/git.txt
 echo >> ~/git.txt
 
-cd ~/Git/Notes
+cd ~/git/Notes
 git remote -v >> ~/git.txt
 echo >> ~/git.txt
 
-cd ~/Git/tsinsen
+cd ~/git/tsinsen
 git remote -v >> ~/git.txt
 echo >> ~/git.txt
 
-cd ~/Git/IMC
+cd ~/git/IMC
 git remote -v >> ~/git.txt
 echo >> ~/git.txt
