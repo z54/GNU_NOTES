@@ -5,6 +5,7 @@
 3. config the git remote
 4. ssh public key
 5. aliyun change the domain
+6. nginx
 
 ## shadowsocks
 
@@ -59,12 +60,35 @@ root@vultr:~# ]
 ## git remote
 
 ```
+# server
 cd /home/git
 git init --bare sample.git
 git init --bare IMC.git
 git init --bare Notes.git
 git init --bare GNU.git
+
+chown -R git:git Notes.git
+chown -R git:git IMC.git
+chown -R git:git GNU.git
 ```
+
+```local
+git fetch
+git ps
+```
+
+## nginx
+
+> nginx, HTTP和反向代理服务，也是一个IMAP/POP3/SMTP服务
+
+1. service nginx start，启动服务
+
+2. 重启服务
+
+    ```
+    /usr/sbin/nginx -t
+    service nginx restart
+    ```
 
 ## others
 
