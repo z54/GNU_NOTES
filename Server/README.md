@@ -71,7 +71,6 @@ root@vultr:~# ]
 cd /home/git
 git init --bare Notes.git
 git init --bare GNU.git
-<<<<<<< HEAD
 
 chown -R git:git Notes.git
 chown -R git:git IMC.git
@@ -81,10 +80,8 @@ chown -R git:git GNU.git
 ```local
 git fetch
 git ps
-=======
 git init --bare IMC.git
 git init --bare tsinsen.git
->>>>>>> fa4a96ac7448b6ee5de8bda88c8d2f4b5a0465d8
 ```
 
 ## nginx

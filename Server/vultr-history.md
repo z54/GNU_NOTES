@@ -1,3 +1,4 @@
+```bash
 root@vultr:~# cat .bash_history 
 ls
 cd cpts_1265_cgi/
@@ -335,3 +336,4 @@ ping google.com
 ls
 cd /home/git/
 ls
+```

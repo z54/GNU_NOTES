@@ -64,7 +64,9 @@ echo 'username ALL=(ALL) ALL' >> /etc/sudoers
 ## 禁止用户访问指定目录，执行指定命令
 
 - 用root帐号修改/etc/sudoers表
-    - 禁止执行ls命令
+
+  - 禁止执行ls命令
+
     `username ALL=!/bin/ls`
 
 - [如何禁止某个linux用户访问某些文件夹及执行某些命令_百度知道](https://zhidao.baidu.com/question/176813836593321564.html)
