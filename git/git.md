@@ -2,7 +2,7 @@
 
 ## initial
 
-本地新建repositories目录，进入并执行下方代码进行初始化
+本地新建repo目录，进入并执行下方代码进行初始化
 
 ```bash
 # local
@@ -15,11 +15,18 @@ git remote add origin https://github.com/username/repo.git
 git push -u origin master
 ```
 
+```mermaid
+graph LR
+init --> add[add file]
+add --> commit[commit file]
+commit --> push[push to cloud]
+```
+
 ### config
 
 [Git - 配置 Git](https://git-scm.com/book/zh/v1/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-%E9%85%8D%E7%BD%AE-Git)
 
-～/.gitconfig
+`～/.gitconfig`
 
 ```bash
 # local
@@ -28,7 +35,7 @@ git push -u origin master
 	name = xxx
 [alias]
 	st = status
-	ci = commit
+	ci = commit -m
 	co = checkout
 	br = branch
 	ps = push -u origin master
@@ -38,17 +45,20 @@ git push -u origin master
 
 `git config --global credential.helper wincred`
 
-`git config --global user.name “yourname`
-
-`git config --global user.email "github@xx.com`
+```bash
+git config --global user.name "yourname"
+git config --global user.email "github@xx.com"
+```
 
 ## usage
 
 | /                | 版本撤销                         |
 | ---------------- | ---------------------------- |
 | `git checkout -- readme.txt` | 取消某文件的修改  |
-| `git reset --hard HEAD~1  `  | 回滚到上一版本,`git log查看历史版本记录`   |
-| `git rm --cached test.txt` | 取消指定文件远程跟踪 | 
+| `git reset --hard HEAD~1` </br> or `git reset --hard HEAD^`  | 回滚到上一版本   |
+| `git reset --hard <versino>`|回退到指定版本，`git log查看历史版本记录`|
+| `git reflog`|操作记录|
+| `git rm --cached test.txt` | 取消指定文件远程跟踪 |
 
 | /                | 添加                            |
 | ---------------- | ---------------------------- |
@@ -61,9 +71,15 @@ git push -u origin master
 | `git rm [file1] [file2] ...`| 删除工作区文件，并且将这次删除放入暂存区 |
 | `git rm --cached [file]`| 停止追踪指定文件，但该文件会保留在工作区  |
 
+```mermaid
+graph LR
+WD[Working Directory] --> RP[Repository]
+
+```
+
 ### remote
 
-`git remote add origin http://github.com/user//repo.git`
+`git remote add origin http://github.com/user/repo.git`
 
 ```
 origin  http://github.com/user/repo.git (fetch)

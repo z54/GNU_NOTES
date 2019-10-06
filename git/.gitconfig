@@ -1,0 +1,15 @@
+[user]
+	email = pzoyzc@gmail.com
+	name = Zach Yin
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	ps = push -u origin master
+[credential]
+	helper=store
+[https]
+	proxy = https://127.0.0.1/1080
+[http]
+	proxy = http://127.0.0.1/1080

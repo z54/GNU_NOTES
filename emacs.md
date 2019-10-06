@@ -19,7 +19,7 @@ hotkey | function
 `C-x C-f` | open file
 `C-x C-s` | save
 `C-x C-c` | exit
-`C-g` | cancel 
+`C-g` | cancel
 `C-x u` | undo
 
 hotkey | function
@@ -42,7 +42,7 @@ hotkey | function
 hotkey | function
 -|-
 `M-s` | new buffer
-`C-x O` | switch buffer 
+`C-x O` | switch buffer
 `C-x 3` | split the buffer to left and right
 `C-x 2` | split the buffer to top and bottom
 `C-x k` | close current buffer
@@ -90,6 +90,7 @@ C-e | end of line
 [Emacs学习笔记(9):org-mode，最好的文档编辑利器，没有之一 - 心内求法 - 博客园](http://www.cnblogs.com/holbrook/archive/2012/04/12/2444992.html#sec-5-1-1)
 
 ## plugin
+
 [Emacs 的智能编译](http://lifegoo.pluskid.org/wiki/EmacsSmartCompile.html)
 [【积水成渊-逐步定制自己的Emacs神器】3：为Emacs安装扩展](https://elloop.github.io/tools/2016-03-01/emacs-accumulate-5-packages-extensions)
 `M-x list-packages`

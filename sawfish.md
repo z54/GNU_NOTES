@@ -1,7 +1,8 @@
 # 多屏设置
-	xrandr --output HDMI-2 --same-as eDP-1
+
+    xrandr --output HDMI-2 --same-as eDP-1
 	Xrandr命令查看当前了了连接的所有显示器
-	看到如下输出
+    看到如下输出
 		DVI-I-0 disconnected
 		VGA-0 connected
 		DVI-I-1 connected
