@@ -74,7 +74,6 @@ git config --global user.email "github@xx.com"
 ```mermaid
 graph LR
 WD[Working Directory] --> RP[Repository]
-
 ```
 
 ### remote
@@ -138,6 +137,13 @@ origin  http://github.com/user/repo.git (push)
 git fetch --all
 git reset --hard origin/master
 git pull
+```
+
+- There is no tracking information for the current branch.
+
+```bash
+git pull origin master
+git branch --set-upstream-to=origin/master master
 ```
 
 ### ignore 忽略文件（指定文件/文件夹 不同步）
