@@ -6,7 +6,7 @@
 # 验证时间20190302
 # 验证内容，ss可用
 
-echo 'deb http://mirrors.ustc.edu.cn/debian stable main contrib non-free' > /etc/apt/sources.list
+# echo 'deb http://mirrors.ustc.edu.cn/debian stable main contrib non-free' > /etc/apt/sources.list
 
 apt update
 apt dist-upgrade

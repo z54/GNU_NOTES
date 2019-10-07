@@ -18,6 +18,10 @@
    
 	`sudo apt install aptitude`
 
-5. 安装x-window
+5. 安装GUI
    
-	`sudo aptitude install x-window-system-core`
+	```sh
+	sudo aptitude install x-window-system-core
+	sudo aptitude install sawfish
+	```
+

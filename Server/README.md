@@ -7,23 +7,16 @@
 5. aliyun change the domain
 6. nginx
 
-# ip history
-
-45.32.84.105 no
-108.61.206.237 no
-45.76.172.139 ok
-207.246.127.63
-
 ## shadowsocks
 
 ```bash
 
-echo 'deb http://mirrors.ustc.edu.cn/debian stable main contrib non-free' > /etc/apt/sources.list
+# echo 'deb http://mirrors.ustc.edu.cn/debian stable main contrib non-free' > /etc/apt/sources.list
 
 apt update
-apt dist-upgrade
+apt dist-upgrade -y
 
-apt install python-pip
+apt install python-pip -y
 pip install shdowsocks
 
 wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev-debian.sh
@@ -88,7 +81,7 @@ git init --bare tsinsen.git
 
 > nginx, HTTP和反向代理服务，也是一个IMAP/POP3/SMTP服务
 
-1. service nginx start，启动服务
+1. `service nginx start`，启动服务
 
 2. 重启服务
 

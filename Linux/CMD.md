@@ -1,5 +1,20 @@
 # CMD
 
+## dpkg
+
+- 导出安装软件列表
+
+```sh
+dpkg --list | cut -f3 -d " " | tail +6
+```
+
+## 截取
+
+`top`
+- `tail`
+
+`tail +6` 保留第六行到文件尾
+
 ## find
 
 `find   path   -option   [   -print ]   [ -exec   -ok   command ]   {} \;`
